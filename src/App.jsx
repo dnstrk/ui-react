@@ -8,6 +8,7 @@ import UserList from "./components/Lists/UserList";
 function App() {
     const [usersList, setUsersList] = useState([]);
     const [inputValue, setInputValue] = useState("");
+    const [filterValue, setFilterValue] = useState("");
 
     useEffect(() => {
         fetchUsers();
@@ -24,11 +25,37 @@ function App() {
         }
     }
 
+    const filter = (list, query, filterSelector) => {
+        let filteredList = [];
+        if(filterSelector==='name') {
+            filteredList = list.filter((user) => {
+                return user.name.toLowerCase().includes(query.toLowerCase());
+            });
+        } else if(filterSelector==='username'){
+            filteredList = list.filter((user) => {
+                return user.username.toLowerCase().includes(query.toLowerCase());
+            });
+        } else {
+            filteredList = list.filter((user) => {
+                return user.name.toLowerCase().includes(query.toLowerCase());
+            });
+        }
+        
+
+        return filteredList;
+    };
+    const filteredUsers = filter(usersList, inputValue, filterValue);
+
     return (
         <div className="col">
-            <MainAppBar inpVal={inputValue} setVal={setInputValue} />
+            <MainAppBar
+                inpVal={inputValue}
+                setVal={setInputValue}
+                filterVal={filterValue}
+                setFilter={setFilterValue}
+            />
             <Container maxWidth="lg" sx={{ mt: "1rem" }}>
-                <UserList inpVal={inputValue} users={usersList} />
+                <UserList users={filteredUsers} />
             </Container>
         </div>
     );
