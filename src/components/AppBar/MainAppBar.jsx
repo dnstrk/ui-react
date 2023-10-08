@@ -10,6 +10,7 @@ import {
     FormControl,
     InputLabel,
     Container,
+    IconButton,
 } from "@mui/material";
 
 export default function MainAppBar(props) {
@@ -34,7 +35,7 @@ export default function MainAppBar(props) {
                             variant="h6"
                             component="span"
                             color="#BEBEBE"
-                            sx={{flexGrow: 1}}
+                            sx={{ flexGrow: 1 }}
                         >
                             Users
                         </Typography>
@@ -45,7 +46,6 @@ export default function MainAppBar(props) {
                             controlled
                         </Typography>
                     )} */}
-
                         <TextField
                             onChange={(e) => {
                                 props.setVal(e.target.value);
@@ -54,7 +54,7 @@ export default function MainAppBar(props) {
                             label="Search users"
                             variant="standard"
                             autoFocus
-                            sx={{mr: '20px'}}
+                            sx={{ mr: "20px" }}
                         />
                         <FormControl
                             sx={{

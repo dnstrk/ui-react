@@ -25,7 +25,6 @@ function App() {
         }
     }
 
-    console.log(filterValue)
 
     const filter = (list, query, filterSelector) => {
         let filteredList = [];
