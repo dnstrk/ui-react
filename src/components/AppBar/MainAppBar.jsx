@@ -25,7 +25,7 @@ export default function MainAppBar(props) {
                 <Toolbar
                     sx={{ display: "flex", justifyContent: "space-between" }}
                 >
-                    <Typography variant="h6" component="span">
+                    <Typography variant="h6" component="span" color='#BEBEBE'>
                         Users
                     </Typography>
                     {/* {props.inpVal ? (
@@ -35,7 +35,7 @@ export default function MainAppBar(props) {
                             controlled
                         </Typography>
                     )} */}
-                    <FormControl sx={{ width: "200px" }}>
+                    <FormControl sx={{ width: "200px", bgcolor: '#9c9695', boxShadow: '0 0 10px #000' }}>
                         <InputLabel id="demo-simple-select-label">
                             Filter selection
                         </InputLabel>

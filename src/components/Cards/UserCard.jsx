@@ -4,16 +4,28 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Box, Link } from "@mui/material";
 
-
 export default function UserCard(props) {
     return (
-        <Card sx={{ width: "100%", display: "flex", bgcolor: "#454545" }}>
+        <Card
+            sx={{
+                ":hover": { bgcolor: "#777777" },
+                width: "100%",
+                display: "flex",
+                bgcolor: "#454545",
+                boxShadow: "0 0 10px #000",
+                transition: 0.3,
+            }}
+        >
             <Box sx={{ flexGrow: 1 }}>
                 <CardContent>
-                    <Typography sx={{ color: "#CDCDCD", mb: '10px' }}>
+                    <Typography sx={{ color: "#CDCDCD", mb: "10px" }}>
                         {props.person.id}. {props.person.name}
                     </Typography>
-                    <Link sx={{ color: "#CDCDCD" }} href="mailto:" underline="none">
+                    <Link
+                        sx={{ color: "#CDCDCD" }}
+                        href="mailto:"
+                        underline="none"
+                    >
                         {props.person.email.toLowerCase()}
                     </Link>
                 </CardContent>
@@ -21,7 +33,7 @@ export default function UserCard(props) {
             <Box>
                 <CardContent>
                     <Typography sx={{ color: "#F66F52" }}>
-                        {props.person.username} 
+                        {props.person.username}
                     </Typography>
                 </CardContent>
             </Box>
