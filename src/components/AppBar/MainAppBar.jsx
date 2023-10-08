@@ -75,7 +75,7 @@ export default function MainAppBar(props) {
                                 onChange={handleChange}
                             >
                                 <MenuItem value="name">Name</MenuItem>
-                                <MenuItem value="Nick">Nick</MenuItem>
+                                <MenuItem value="nick">Nick</MenuItem>
                             </Select>
                         </FormControl>
                     </Toolbar>

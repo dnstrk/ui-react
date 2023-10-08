@@ -8,7 +8,6 @@ export default function UserCard(props) {
     const mailTo = () => {
         return 'mailto:'+props.person.email
     }
-    console.log(mailTo())
 
     return (
         <Card
