@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import MainAppBar from "./components/AppBar/MainAppBar";
-import { Container } from "@mui/material";
+import { Alert, Container } from "@mui/material";
 import axios from "axios";
 import UserList from "./components/Lists/UserList";
 
@@ -21,7 +21,7 @@ function App() {
             );
             setUsersList(users.data);
         } catch (e) {
-            console.log(e);
+            console.log(e.message)
         }
     }
 
@@ -31,7 +31,7 @@ function App() {
             filteredList = list.filter((user) => {
                 return user.name.toLowerCase().includes(query.toLowerCase());
             });
-        } else if(filterSelector==='username'){
+        } else if(filterSelector==='nick'){
             filteredList = list.filter((user) => {
                 return user.username.toLowerCase().includes(query.toLowerCase());
             });

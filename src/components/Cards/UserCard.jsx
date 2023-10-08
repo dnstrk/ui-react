@@ -5,6 +5,11 @@ import Typography from "@mui/material/Typography";
 import { Box, Link } from "@mui/material";
 
 export default function UserCard(props) {
+    const mailTo = () => {
+        return 'mailto:'+props.person.email
+    }
+    console.log(mailTo())
+
     return (
         <Card
             sx={{
@@ -23,7 +28,7 @@ export default function UserCard(props) {
                     </Typography>
                     <Link
                         sx={{ color: "#CDCDCD" }}
-                        href="mailto:"
+                        href={mailTo()}
                         underline="none"
                     >
                         {props.person.email.toLowerCase()}
