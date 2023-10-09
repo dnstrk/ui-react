@@ -2,7 +2,7 @@ import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import UserCard from "../Cards/UserCard";
-import EmptyCard from "../Cards/EmptyCard";
+import NoUsersAlert from "../Alert/NoUsersAlert";
 
 export default function UserList(props) {
     return (
@@ -19,7 +19,7 @@ export default function UserList(props) {
                         <UserCard person={user}></UserCard>
                     </ListItem>
                 )):
-                <ListItem sx={{justifyContent: 'center'}}><EmptyCard/></ListItem>
+                <ListItem sx={{justifyContent: 'center'}}><NoUsersAlert/></ListItem>
             }
             
         </List>

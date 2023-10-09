@@ -12,6 +12,7 @@ import {
     Container,
     IconButton,
 } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function MainAppBar(props) {
     // const [inputValue, setInputValue] = useState("");
@@ -34,7 +35,7 @@ export default function MainAppBar(props) {
                         <Typography
                             variant="h6"
                             component="span"
-                            color="#BEBEBE"
+                            color="#e6e3e3"
                             sx={{ flexGrow: 1 }}
                         >
                             Users
@@ -46,6 +47,9 @@ export default function MainAppBar(props) {
                             controlled
                         </Typography>
                     )} */}
+                        <SearchIcon
+                            sx={{ mt: "1rem", mr: "2px", color: "#9c9695" }}
+                        />
                         <TextField
                             onChange={(e) => {
                                 props.setVal(e.target.value);
@@ -54,13 +58,38 @@ export default function MainAppBar(props) {
                             label="Search users"
                             variant="standard"
                             autoFocus
-                            sx={{ mr: "20px" }}
+                            sx={{
+                                mr: "20px",
+                                input: {
+                                    transition: ".3s",
+                                    borderRadius: "20px",
+                                    p: "4px 10px 5px",
+                                    ":focus": { bgcolor: "#9c9695" },
+                                },
+                                label: { color: "#e6e3e3", ml: "0.5rem" },
+                                div: {
+                                    "::before": {
+                                        borderBottom: "none",
+                                    },
+                                    "::after": {
+                                        borderBottom: "none",
+                                    },
+                                    ":hover": {
+                                        ":before": {
+                                            borderBottom: "none",
+                                        },
+                                        borderBottom: "none",
+                                    },
+                                },
+                            }}
                         />
                         <FormControl
                             sx={{
                                 width: "120px",
-                                bgcolor: "#9c9695",
-                                boxShadow: "0 0 10px #000",
+                                mt: "0.5rem",
+                                label : {
+                                    color: "#e6e3e3"
+                                }
                             }}
                             size="small"
                         >
@@ -73,6 +102,7 @@ export default function MainAppBar(props) {
                                 value={props.filterVal}
                                 label="Filter selection"
                                 onChange={handleChange}
+                                sx={{ div: { color: "#e6e3e3" } }}
                             >
                                 <MenuItem value="name">Name</MenuItem>
                                 <MenuItem value="nick">Nick</MenuItem>
