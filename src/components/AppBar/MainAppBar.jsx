@@ -57,7 +57,6 @@ export default function MainAppBar(props) {
                             id="standard-basic"
                             label="Search users"
                             variant="standard"
-                            autoFocus
                             sx={{
                                 mr: "20px",
                                 input: {
