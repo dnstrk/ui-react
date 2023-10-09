@@ -6,8 +6,8 @@ import { Box, Link } from "@mui/material";
 
 export default function UserCard(props) {
     const mailTo = () => {
-        return 'mailto:'+props.person.email
-    }
+        return "mailto:" + props.person.email;
+    };
 
     return (
         <Card
@@ -17,7 +17,7 @@ export default function UserCard(props) {
                 display: "flex",
                 bgcolor: "#454545",
                 boxShadow: "0 0 10px #000",
-                transition: 0.3,
+                transition: "0.3s",
             }}
         >
             <Box sx={{ flexGrow: 1 }}>

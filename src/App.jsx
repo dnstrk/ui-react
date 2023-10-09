@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import MainAppBar from "./components/AppBar/MainAppBar";
-import { Alert, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import axios from "axios";
 import UserList from "./components/Lists/UserList";
 
@@ -21,31 +21,34 @@ function App() {
             );
             setUsersList(users.data);
         } catch (e) {
-            console.log(e.message)
+            console.log(e.message);
         }
     }
 
-
     const filter = (list, query, filterSelector) => {
         let filteredList = [];
-        if(filterSelector==='name') {
+        if (filterSelector === "name") {
             filteredList = list.filter((user) => {
                 return user.name.toLowerCase().includes(query.toLowerCase());
             });
-        } else if(filterSelector==='nick'){
+        } else if (filterSelector === "nick") {
             filteredList = list.filter((user) => {
-                return user.username.toLowerCase().includes(query.toLowerCase());
+                return user.username
+                    .toLowerCase()
+                    .includes(query.toLowerCase());
             });
         } else {
             filteredList = list.filter((user) => {
                 return user.name.toLowerCase().includes(query.toLowerCase());
             });
         }
-        
 
         return filteredList;
     };
     const filteredUsers = filter(usersList, inputValue, filterValue);
+
+    const currentPage = window.location.href;
+    console.log(currentPage)
 
     return (
         <div className="col">
@@ -55,6 +58,7 @@ function App() {
                 filterVal={filterValue}
                 setFilter={setFilterValue}
             />
+                
             <Container maxWidth="lg" sx={{ mt: "1rem" }}>
                 <UserList users={filteredUsers} />
             </Container>

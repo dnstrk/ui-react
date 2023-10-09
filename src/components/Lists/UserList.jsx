@@ -12,16 +12,20 @@ export default function UserList(props) {
                 maxWidth: "100%",
                 bgcolor: "transparent",
             }}
-        >   
-            {props.users.length > 0 ?
+        >
+            {props.users.length > 0 ? (
                 props.users.map((user) => (
-                    <ListItem key={user.id}>
-                        <UserCard person={user}></UserCard>
-                    </ListItem>
-                )):
-                <ListItem sx={{justifyContent: 'center'}}><NoUsersAlert/></ListItem>
-            }
-            
+                    <a href={"/" + user.id} key={user.id}>
+                        <ListItem>
+                            <UserCard person={user}></UserCard>
+                        </ListItem>
+                    </a>
+                ))
+            ) : (
+                <ListItem sx={{ justifyContent: "center" }}>
+                    <NoUsersAlert />
+                </ListItem>
+            )}
         </List>
     );
 }

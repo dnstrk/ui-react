@@ -10,7 +10,6 @@ import {
     FormControl,
     InputLabel,
     Container,
-    IconButton,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -38,7 +37,9 @@ export default function MainAppBar(props) {
                             color="#e6e3e3"
                             sx={{ flexGrow: 1 }}
                         >
+                            <a href="/">
                             Users
+                            </a>
                         </Typography>
                         {/* {props.inpVal ? (
                         <Typography>{props.inpVal}</Typography>
